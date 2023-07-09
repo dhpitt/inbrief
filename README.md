@@ -2,4 +2,4 @@
 
 Built on Python, Flask, JS and Celery.
 
-[Interface demo](inbrief_demo_1.png)
+![Interface demo](inbrief_demo_1.png)
