@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    {% include 'head.html' %}
+  <body>
+
+  <p id="redirectTimer"></p>
+<script>
+    var seconds = 0;
+    var redirectTimer = document.getElementById("redirectTimer");
+    function increment() {
+	seconds += 1;
+	redirectTimer.innerHTML = "Success. Redirecting you in " + (5 - seconds) + " seconds.";
+    }
+    setInterval(increment, 1000);
+
+    function navigate() {
+        window.location.href = 'loading';  // Redirects user to the /map route when 'create_map' is finished
+    }
+    setTimeout(navigate, 5000) // wait 5 seconds to redirect. 
+</script>
+
+    <!-- scripts -->
+  </body>
+  {% include 'footer.html' %}
+</html>

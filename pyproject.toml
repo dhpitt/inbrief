@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "inbrief-app"
+version = "0.1.0"
+description = ""
+authors = ["dhpitt <david.h.pitt@gmail.com>"]
+readme = "README.md"
+packages = [{include = "inbrief-app"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = "^2.3.2"
+psycopg2-binary = "^2.9.6"
+openai = "^0.27.8"
+textract = "^1.6.5"
+pypdf = "^3.9.1"
+celery = "^5.3.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,83 @@
+/* Main css style */
+
+body {
+    font-family: "dm serif display";
+}
+
+h1 {
+    font-family: "dm serif display";
+    color:black;
+}
+
+.content {
+padding: 22px;
+
+}
+/************* begin footer *********************/
+
+footer {
+    background-color: 
+}
+
+/************* end footer *********************/
+
+.container {
+    align: center;
+}
+/************* begin top nav bar ****************/
+
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #405b8e; 
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav p {
+    float: left;
+    text-align: left;
+    font-size: 22px;
+    padding: 0px 22px;
+    color: white;
+    text-decoration: none;
+
+}
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 22px 22px;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/************* end top nav bar ****************/
+
+
+/************* begin form style ****************/
+
+button,
+input,
+select,
+label,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+
+input {
+    align: center;
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
