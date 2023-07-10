@@ -1,7 +1,12 @@
 /* Main css style */
+html, body{
+    height: 100%
+}
 
 body {
     font-family: "dm serif display";
+
+    background-color: #F9FBF2;
 }
 
 h1 {
@@ -13,16 +18,59 @@ h1 {
 padding: 22px;
 
 }
+
+/* holder that holds header -> body -> footer */
+#holder{
+    min-height: 100%;
+    position:relative;
+}
+
+#body{
+    padding-bottom: 80px;    /* height of footer */
+}
+
+
 /************* begin footer *********************/
 
 footer {
-    background-color: 
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: #F9FBF2; 
+
+}
+
+.footer_content {
+    padding: 10px 10px;
+    background-color: #405b8e;
+}
+.footer_content p {
+    color: #F9FBF2;
+}
+
+.footer_content a {
+    color: #AFCBFF; 
 }
 
 /************* end footer *********************/
 
 .container {
     align: center;
+}
+
+/************* summary text box ********************/
+.longtext_container {
+    align: center;
+    padding: 5% auto;
+    border: 10px solid #9DACFF;
+
+}
+
+
+.longtext{
+    align: left;
+    padding: 5%;
 }
 /************* begin top nav bar ****************/
 
