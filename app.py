@@ -16,7 +16,7 @@ def index():
 
 @app.route('/about')
 def about():
-    return render_template('hello.html')
+    return render_template('about.html')
 	
 @app.route('/upload', methods = ['GET', 'POST'])
 def upload():
