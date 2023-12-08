@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
 
-from summarize_async import recursively_summarize_async
+from summarize_async import  embed_and_polish
 
 #from inbrief.recurse import recursively_summarize
 from gpt_summ.pdf import pdf_to_txt
@@ -23,6 +23,7 @@ def upload():
     # renders a loading screen that shows (for now) some metadata about your file.
    if request.method == 'POST':
       f = request.files['file']
+      query = request.form['query']
       unsecure_fname = f.filename
       if not unsecure_fname:
           unsecure_fname = " "
@@ -31,9 +32,13 @@ def upload():
           f.save(fname)
           raw_str, num_pgs = pdf_to_txt(fname)
           num_words = len(raw_str.split(b" "))
-          with open("test.txt", "wb+") as temp:
+          with open("infile.txt", "wb+") as temp:
             temp.write(raw_str)
             temp.close()
+          
+          with open("query.txt", "w+") as query_file:
+              query_file.write(query)
+              query_file.close()
           with open("metadata.txt", "w+") as info:
             info.write(f"{num_pgs}_{num_words}")
             info.close()
@@ -45,7 +50,16 @@ def upload():
 def summarize():
     # summarizes whatever is currently in the file test.txt. 
     # returns a dummy template html until the summary is ready
-    summary = recursively_summarize_async("test.txt") # rewrites summary.txt
+    #summary = recursively_summarize_async("test.txt") # rewrites summary.txt
+    with open("query.txt", "r+") as f:
+        text = f.read()
+        f.close()
+    if text != '':
+        query = text
+    else:
+        query = "The impact of the action on habitats"
+    #summary = embed_and_polish("test.txt", query) # rewrites summary.txt
+    summary = embed_and_polish("infile.txt", query, 10)
     return render_template("summary.html", summary="")
 
 @app.route('/loading')

@@ -1,25 +1,18 @@
-<!DOCTYPE html>
 <html>
-    <div class="holder">
     {% include 'head.html' %}
   <body>
-    <div class="container">
       <div id="content">
 
       <form action = "http://localhost:5000/upload" method = "POST" 
          enctype = "multipart/form-data">
 	  <div class="input_holder">
-	      <input type = "file" name = "file" id="file"/><br>
-
-	    <label for="query">Short query to focus summary</label><br> 
-	    <input type = "text" name = "query" id="query"/>
+	    <input type = "file" name = "file" id="file"/>
 	</div>
 	<div>
 	 <button> Summarize it!</button>
 	</div>
       </form>   
       </div>
-    </div>
     <!-- scripts -->
     <!-- source the bootstrap js and popper-->
 
@@ -27,5 +20,4 @@
   </body>
   {% include 'footer.html' %}
 
-    </div>
 </html>

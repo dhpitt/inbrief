@@ -63,7 +63,8 @@ footer {
 .longtext_container {
     align: center;
     padding: 5% auto;
-    border: 10px solid #9DACFF;
+    overflow-y: auto;
+    /*border: 10px solid #9DACFF; */
 
 }
 
@@ -71,8 +72,9 @@ footer {
 .longtext{
     align: left;
     padding: 5%;
+    overflow-y: auto;
 }
-/************* begin top nav bar ****************/
+/***********:** begin top nav bar ****************/
 
 
 /* Add a black background color to the top navigation */
@@ -102,7 +104,7 @@ footer {
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: #ddd; 
   color: black;
 }
 
@@ -120,7 +122,9 @@ textarea {
   font-size: 100%;
 }
 
-
+.input_holder {
+    align: center;
+}
 input {
     align: center;
     width: 50%;
